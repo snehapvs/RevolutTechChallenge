@@ -5,7 +5,7 @@
 
 ## Running the application locally
 
-* maven wrapper is being used in the app and hence the running environment need not install/contain maven.
+* Maven wrapper is being used in the app and hence the running environment need not install/contain maven.
 
 #### Running tests From Terminal:
 
@@ -21,8 +21,8 @@ $ ./mvnw exec:java --> runs the applictaion on port 8080 on default
 
 ## Technologies
 
-* used `jetty-jesrsey` for server and REST framework, as it is suitable for light-weight rest applications.
-* used `ConcurrentHashMap` for in memory storage as it handles concurrency, synchronization and thread-safe functionality while processing multiple requests on same account.(all data will be erased after the application is terminated).
+* Used `jetty-jesrsey` for server and REST framework, as it is suitable for light-weight rest applications.
+* Used `ConcurrentHashMap` for in memory storage as it handles concurrency, synchronization and thread-safe functionality while processing multiple requests on same account.(all data will be erased after the application is terminated).
 * git for version control.
 
 ## API design
