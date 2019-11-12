@@ -1,18 +1,18 @@
 # Revolut Tech Challenge
 
-### Prerequisites
+## Prerequisites
 * java 
 
 ## Running the application locally
 
 * maven wrapper is being used in the app and hence the running environment need not install/contain maven.
 
-### Running tests From Terminal:
+#### Running tests From Terminal:
 
 ```sh
 $ ./mvnw test
 ```
-### Running the application:
+#### Running the application:
 
 ```sh
 $ ./mvnw clean install 
@@ -55,10 +55,10 @@ The app exposes different features under two main controllers (all example reque
 
 #### 1. Create two accounts:
 
-`curl -X POST \
-  http://localhost:8080/api/account/create' `
+* Test url:`curl -X POST http://localhost:8080/api/account/create `
 
 ** runnig the same service twice for two accounts which will be used for tetsing the below requets
+
 * Example Output1:
 `{
     "accountNumber": "dfc58e1c-79fd-4ce5-9437-1a8175b58b9a",
@@ -74,7 +74,7 @@ The app exposes different features under two main controllers (all example reque
 
 #### 2. Get Balance: 
 
-* test url:`curl -X GET  http://localhost:8080/api/account/balance/dfc58e1c-79fd-4ce5-9437-1a8175b58b9a `
+* Test url:`curl -X GET  http://localhost:8080/api/account/balance/dfc58e1c-79fd-4ce5-9437-1a8175b58b9a `
 
 * Output: 
 `{
@@ -83,7 +83,8 @@ The app exposes different features under two main controllers (all example reque
 }`
 #### 3. Deposit in the first Account: 
 
-* test url:`curl -X POST   http://localhost:8080/api/account/deposit   -H 'content-type: application/json' -d '{"accountNumber":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","amount":"1000"}'`
+* Test url:
+`curl -X POST   http://localhost:8080/api/account/deposit   -H 'content-type: application/json' -d '{"accountNumber":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","amount":"1000"}'`
 
 * Output: 
 `{
@@ -93,7 +94,8 @@ The app exposes different features under two main controllers (all example reque
 
 #### 4. Withdraw from the first Account: 
 
-* test url:`curl -X POST  http://localhost:8080/api/account/withdraw  -H 'content-type: application/json'  -d '{"accountNumber":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","amount":"100"}'	`
+* Test url:
+`curl -X POST  http://localhost:8080/api/account/withdraw  -H 'content-type: application/json'  -d '{"accountNumber":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","amount":"100"}'	`
 
 * Output: 
 `{
@@ -103,7 +105,8 @@ The app exposes different features under two main controllers (all example reque
 
 #### 5. Transfer amount from account 1 to account 2 (created above):
 
-* test url:`curl -XPOST -H "Content-type: application/json" -d '{"sourceAccount":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","targetAccount":"6c54b0ed-79d8-491d-8cac-2844dab4a221","amount":"100"}' 'localhost:8080/api/transfer'`
+* Test url:
+`curl -XPOST -H "Content-type: application/json" -d '{"sourceAccount":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","targetAccount":"6c54b0ed-79d8-491d-8cac-2844dab4a221","amount":"100"}' 'localhost:8080/api/transfer'`
 
 * Output: status 200.
 
@@ -111,7 +114,7 @@ The app exposes different features under two main controllers (all example reque
 
 ##### balance in source:
 
-* test url:`curl -X GET  http://localhost:8080/api/account/balance/dfc58e1c-79fd-4ce5-9437-1a8175b58b9a `
+* Test url:`curl -X GET  http://localhost:8080/api/account/balance/dfc58e1c-79fd-4ce5-9437-1a8175b58b9a `
 
 * output:
 `{
@@ -121,7 +124,7 @@ The app exposes different features under two main controllers (all example reque
 
 ##### balance in target:
 
-* test url: `curl -X GET  http://localhost:8080/api/account/balance/6c54b0ed-79d8-491d-8cac-2844dab4a221 `
+* Test url: `curl -X GET  http://localhost:8080/api/account/balance/6c54b0ed-79d8-491d-8cac-2844dab4a221 `
 
 * output:
 `{
