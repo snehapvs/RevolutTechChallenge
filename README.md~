@@ -102,7 +102,7 @@ The app exposes different features under two main controllers (all example reque
 
 * balance in source:
 `curl -X GET  http://localhost:8080/api/account/balance/dfc58e1c-79fd-4ce5-9437-1a8175b58b9a `
-output:
+* output:
 `{
     "accountNumber": "dfc58e1c-79fd-4ce5-9437-1a8175b58b9a",
     "balance": 800
@@ -110,7 +110,8 @@ output:
 
 * balance in target:
 `curl -X GET  http://localhost:8080/api/account/balance/6c54b0ed-79d8-491d-8cac-2844dab4a221 `
-output:
+
+ * output:
 `{
     "accountNumber": "dfc58e1c-79fd-4ce5-9437-1a8175b58b9a",
     "balance": 100
