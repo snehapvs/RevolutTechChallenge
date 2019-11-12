@@ -53,7 +53,7 @@ The app exposes different features under two main controllers (all example reque
 
 ## Example Tests and Results
 
-1. Create two accounts:
+#### 1. Create two accounts:
 
 `curl -X POST \
   http://localhost:8080/api/account/create' `
@@ -72,18 +72,18 @@ The app exposes different features under two main controllers (all example reque
 
 ** please use the same account numbers in the tested example outputs for all the below requests
 
-2. Get Balance: 
+#### 2. Get Balance: 
 
-`curl -X GET  http://localhost:8080/api/account/balance/dfc58e1c-79fd-4ce5-9437-1a8175b58b9a `
+* test url:`curl -X GET  http://localhost:8080/api/account/balance/dfc58e1c-79fd-4ce5-9437-1a8175b58b9a `
 
 * Output: 
 `{
     "accountNumber": "dfc58e1c-79fd-4ce5-9437-1a8175b58b9a",
     "balance": 0
 }`
-3. Deposit in the first Account: 
+#### 3. Deposit in the first Account: 
 
-`curl -X POST   http://localhost:8080/api/account/deposit   -H 'content-type: application/json' -d '{"accountNumber":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","amount":"1000"}'`
+* test url:`curl -X POST   http://localhost:8080/api/account/deposit   -H 'content-type: application/json' -d '{"accountNumber":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","amount":"1000"}'`
 
 * Output: 
 `{
@@ -91,9 +91,9 @@ The app exposes different features under two main controllers (all example reque
     "balance": 1000
 }`
 
-4. Withdraw from the first Account: 
+#### 4. Withdraw from the first Account: 
 
-`curl -X POST  http://localhost:8080/api/account/withdraw  -H 'content-type: application/json'  -d '{"accountNumber":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","amount":"100"}'	`
+* test url:`curl -X POST  http://localhost:8080/api/account/withdraw  -H 'content-type: application/json'  -d '{"accountNumber":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","amount":"100"}'	`
 
 * Output: 
 `{
@@ -101,17 +101,17 @@ The app exposes different features under two main controllers (all example reque
     "balance": 900
 }`
 
-5. Transfer amount from account 1 to account 2 (created above):
+#### 5. Transfer amount from account 1 to account 2 (created above):
 
-`curl -XPOST -H "Content-type: application/json" -d '{"sourceAccount":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","targetAccount":"6c54b0ed-79d8-491d-8cac-2844dab4a221","amount":"100"}' 'localhost:8080/api/transfer'`
+* test url:`curl -XPOST -H "Content-type: application/json" -d '{"sourceAccount":"dfc58e1c-79fd-4ce5-9437-1a8175b58b9a","targetAccount":"6c54b0ed-79d8-491d-8cac-2844dab4a221","amount":"100"}' 'localhost:8080/api/transfer'`
 
 * Output: status 200.
 
-6. Check balance in source and target accounts for verification :
+#### 6. Check balance in source and target accounts for verification :
 
-* balance in source:
+##### balance in source:
 
-`curl -X GET  http://localhost:8080/api/account/balance/dfc58e1c-79fd-4ce5-9437-1a8175b58b9a `
+* test url:`curl -X GET  http://localhost:8080/api/account/balance/dfc58e1c-79fd-4ce5-9437-1a8175b58b9a `
 
 * output:
 `{
@@ -119,11 +119,11 @@ The app exposes different features under two main controllers (all example reque
     "balance": 800
 }`
 
-* balance in target:
+##### balance in target:
 
-`curl -X GET  http://localhost:8080/api/account/balance/6c54b0ed-79d8-491d-8cac-2844dab4a221 `
+* test url: `curl -X GET  http://localhost:8080/api/account/balance/6c54b0ed-79d8-491d-8cac-2844dab4a221 `
 
- * output:
+* output:
 `{
     "accountNumber": "dfc58e1c-79fd-4ce5-9437-1a8175b58b9a",
     "balance": 100
